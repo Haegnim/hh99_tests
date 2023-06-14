@@ -1,117 +1,97 @@
-// 1. 0과 9 사의 서로 다른 숫자 3개를 무작위로 뽑습니다.
-let randomIndexArray = [];
-function randomBall(min, max) {
-    //랜덤 값을 배열에 저장
-    for (let i = 0; i < 3; i++) {
-        //랜덤하게 값을 뽑음
-        const random = Math.floor(Math.random() * (max - min) + min);
-        // 인덱스와 대조 / 없으면 -1
-        if (randomIndexArray.indexOf(random) === -1) {
-            //배열 끝에 값을 넣음
-            randomIndexArray.push(random);
-        } else {
-            //값이 겹쳐서 하나가 없어지면 for문이 한번 더 돌게 i를 -해줌
-            i--;
-        }
-    }
-    return randomIndexArray;
-}
-randomBall(0, 9);
-//컴퓨터가 찍은 랜덤 숫자
-console.log('정답=>' + randomIndexArray);
-console.log('컴퓨터가 숫자를 생성하였습니다. 답을 맞춰보세요!');
-
-//-------------------------------------
-
-// 2. 사용자의 입력값을 받음
-//readline 모듈 : Readable Stream에서 한 번에 한 줄 씩 데이터를 읽기 위한 인터페이스를 제공하는 모듈
-
-//readline 모듈 불러오기
-let readline = require('readline');
-//인터페이스 생성하기
-let r = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
-
-//몇 번째 시도
+//시도 횟수
 let trying = 1;
-
-// 터미널에 원하는 문구로 입력받기 / 한번만 실행된다고 함
-// r.question('1번째 시도 :', (input) => r.emit('line', input));
-
-//setPrompt는 .on에서 사용할 수 잇는 메소드
-r.setPrompt(trying + '번째 시도 :');
-r.prompt();
-
-// on()메서드를 사용해 이벤트와 콜백함수를 전달합니다.
-// r.question(trying + '번째 시도 :', (input) => console.log(input));
-r.on('line', function (line) {
-    // 입력받는 값을 처리하는 코드
-
-    // 입력값을 받을 배열
-    let writeArray = [];
-
-    if (line == 'exit') {
-        r.close();
-    } else {
-        //line을 끊어 읽어서 배열에 저장
-        const arr = line.split('');
-        for (let i = 0; i < line.length; i++) {
-            writeArray.push(arr[i]);
-        }
-        //도전 횟수 증가
-        trying++;
+//무작위 숫자 3개를 생성하여 정답지를 만듭니다.
+const randomIndexArray = new Set();
+const randomBall = (min, max) => {
+    while (randomIndexArray.size < 3) {
+        const random = Math.floor(Math.random() * (max - min) + min);
+        randomIndexArray.add(random);
     }
-    // console.log(trying + '번째 시도 : ' + line);
-    // 터미널에 원하는 문구로 입력받기 / 처음엔 뜨지 않는다.
-    r.setPrompt(trying + '번째 시도 :');
-    comparison(randomIndexArray, writeArray, trying);
-    r.prompt();
-});
+    console.log('정답=>' + [...randomIndexArray]);
+    console.log('컴퓨터가 숫자를 생성하였습니다. 답을 맞춰보세요!');
+};
 
-r.on('close', function () {
-    //입력이 끝나고 실행할 코드
-    process.exit(); //프로세스 종료
-});
+//유저의 대답과 정답을 비교합니다.
+const compareNumbers = (userInput) => {
+    //랜덤값(정답)의 배열
+    let randomNum = [...randomIndexArray];
+    //input값의 배열
+    let inputNum = [...userInput];
+    //s의 개수
+    let sNum = [];
+    //랜덤 수와 input값의 교집합
+    let answerIntersection = [];
 
-//3. 랜덤숫자와 사용자의 입력값을 대조
-function comparison(random, write, trying) {
-    let answerS = [];
-    let cross = [];
-    let writeNum = write.map(Number);
-
-    //랜덤 숫자와 입력값의 교집합을 배열로 만듬
-    cross = random.filter((x) => writeNum.includes(x));
-
-    for (let i = 0; i < random.length; i++) {
-        //랜덤 숫자와 입력값의 순서와 값이 같을 경우 answerS에 값을 넣는다.
-        //S와 B의 중복을 피하기 위해 S의 수 만큼 cross에서 제거한다
-        if (random[i] === writeNum[i]) {
-            answerS.push(writeNum[i]);
-            cross.pop();
+    answerIntersection = randomNum.filter((x) => inputNum.includes(x));
+    for (let i = 0; i < randomNum.length; i++) {
+        if (randomNum[i] === inputNum[i]) {
+            sNum.push(inputNum[i]);
+            answerIntersection.pop();
         }
     }
+    return result(sNum, answerIntersection);
+};
 
+//게임 결과을 안내합니다.
+const result = (answerS, cross) => {
     if (answerS.length === 3) {
-        //S가 3이면 정답
+        //정답
         trying--;
         console.log(trying + '번만에 맞히셨습니다.');
         console.log('게임을 종료합니다.');
         r.close();
     } else if (answerS.length === 0 && cross.length === 0) {
+        //3개의 수 중에 정답이 하나도 없을 경우
         console.log(answerS.length + 'S' + cross.length + 'B');
     } else if (answerS.length === 0) {
+        //S가 0이고 자리는 틀렸지만 수는 맞는 경우
         console.log(cross.length + 'B');
     } else if (cross.length === 0) {
+        //B가 0이고 자리와 수 모두 맞는 경우
         console.log(answerS.length + 'S');
     } else {
-        //힌트를 주기 위해 S는 answer의 수를 B는 cross의 수를 반환한다.
+        //S와 B의 개수를 통해 힌트 전달
         console.log(answerS.length + 'S' + cross.length + 'B');
     }
-    // if (answerS.length === 3) {
-    //     console.log(trying + '번만에 맞히셨습니다.');
-    //     console.log('게임을 종료합니다.');
-    //     r.close();
-    // }
-}
+};
+
+//입력창 생성
+let readline = require('readline');
+let r = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+
+//입력을 받을 떄
+r.on('line', function (input) {
+    if (input == 'exit') {
+        r.close();
+    }
+    if (input.length !== 3) {
+        console.log('서로 다른 3개의 수를 입력해주세요!');
+        gameStartMesege();
+    } else {
+        let writeArray = new Set();
+        const arr = input.split('');
+        trying++;
+        for (let i = 0; i < input.length; i++) {
+            writeArray.add(Number(arr[i]));
+        }
+        gameStartMesege(writeArray);
+    }
+});
+//입력 종료시
+r.on('close', function () {
+    process.exit();
+});
+//정답에 실패할 경우 힌트 반환 + input값을 받는 터미널 메세지 출력
+const gameStartMesege = (userInput) => {
+    r.setPrompt(trying + '번째 시도 :');
+    if (userInput) {
+        compareNumbers(userInput);
+    }
+    r.prompt();
+};
+
+randomBall(0, 9);
+gameStartMesege();
