@@ -1,0 +1,119 @@
+
+.App{
+  max-width: 1200px;
+  min-width: 800px; 
+  width: 100%;
+  /* height: 100vh; */
+  margin: 0 auto;
+  background-color: #efefef;
+padding: 14px 0 0 0;
+}
+p{
+  margin: 0;
+}
+ul{
+  list-style: none;
+}
+main{
+  width: 90%;
+  margin: 0 auto;
+
+}
+button{
+  border: none;
+}
+.todo-header{
+  padding: 12px 0;
+  width: 90%;
+  margin: 0 auto 12px;
+  background-color: azure;
+  text-align: center;
+  border: 1px solid #777;
+
+}
+.save-todo-box{
+  width: 100%;
+  /* padding: 12px 18px; */
+  display: flex;
+  background-color: azure;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #777;
+  
+}
+.input-container{
+  /* width: 90%; */
+  padding: 12px 18px 12px 0;
+  display: flex;
+align-items: center;
+}
+.input-container p{
+  width: 60px;
+  /* background-color: rebeccapurple; */
+  text-align: center;
+  padding: 20px 20px;
+  font-size: 18px;
+  /* margin-right: 18px; */
+}
+.input-container input{
+  border: none;
+  height: 46px;
+  padding-left: 10px;
+  background-color: #efefef;
+  width: 320px;
+  border-radius: 8px;
+  font-size: 20px;
+  border: 1px solid #777;
+}
+.save-todo-box button{
+  width: 160px;
+  height: 50px;
+  margin: 0 20px 0 0;
+  border-radius: 8px;
+  border: 1px solid #777;
+}
+
+section ul{
+  display: flex;
+  gap: 17px;
+  flex-wrap:wrap;
+  padding-left: 0px;
+  min-height: 42vh;
+  /* height: 300px; */
+}
+
+.todo-card{
+  padding: 28px 28px;
+  width: calc(30% - 33px);
+  height: 184px;
+  background-color: azure;
+  border: 1px solid #777;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.todo-card .todo-title{
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+.todo-card .todo-text{
+  margin: 15px 0 32px;
+}
+.todo-card .todo-card-btn-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.todo-card .todo-card-btn-box button{
+  width: calc(50% - 8px);
+  padding: 12px 0;
+}
+.todo-card .todo-card-btn-box .remove-btn{
+  border: 2px solid red;
+  border-radius: 8px;
+}
+.todo-card .todo-card-btn-box .clear-btn{
+  border: 2px solid green;
+  border-radius: 8px;
+}
