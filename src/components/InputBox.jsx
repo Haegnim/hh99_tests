@@ -4,15 +4,15 @@ import Button from './Button';
 
 function InputBox({ title, text, onSubmitHandler, textChangeHandler, titleChangeHandler }) {
     return (
-        <div className="save-todo-box">
+        <form className="save-todo-box">
             <div className="input-container">
-                <p>제목</p>
+                <label>제목</label>
                 <input type="text" value={title} onChange={titleChangeHandler} />
-                <p>내용</p>
+                <label>내용</label>
                 <input type="text" value={text} onChange={textChangeHandler} />
             </div>
             <Button buttonFuntion={onSubmitHandler} text={'저장'} />
-        </div>
+        </form>
     );
 }
 

@@ -6,18 +6,21 @@ import InputBox from './components/InputBox';
 
 function App() {
     //js
+    // todolist content
     const [todoCard, setTodoCard] = useState([
         { id: 1, title: `리액트 공부하기`, text: `리액트 기초를 공부해봅시다`, isdone: false },
         {
             id: 2,
             title: `리액트 공부하기1`,
-            text: `리액트 기초를 공부해봅시다. 글수를 늘려서 테스트를 해봐야겠어 너무 졸립다. 나도 서버 같은 거 붙이고 싶다. 무리겠지.`,
+            text: `리액트 기초를 공부해봅시다. 글수를 늘려서 테스트를 해봐야겠어 너무 졸립다. 나도 서버 같은 거 붙이고 싶다. 무리겠지.글수를 늘려서 테스트를 해봐야겠어 너무 졸립다. 나도 서버 같은 거 붙이고 싶다. 무리겠지.`,
             isdone: false,
         },
         { id: 3, title: `리액트 공부하기2`, text: `리액트 기초를 공부해봅시다`, isdone: true },
         { id: 4, title: `리액트 공부하기3`, text: `리액트 기초를 공부해봅시다`, isdone: false },
         { id: 5, title: `리액트 공부하기4`, text: `리액트 기초를 공부해봅시다`, isdone: false },
     ]);
+
+    //input value submit
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
@@ -36,6 +39,8 @@ function App() {
         };
         setTodoCard([...todoCard, newTodo]);
     };
+
+    //button click event
     const clickRemove = (id) => {
         const newTodo = todoCard
             .filter((item) => item.id !== id)
@@ -71,24 +76,22 @@ function App() {
                     titleChangeHandler={titleChangeHandler}
                     textChangeHandler={textChangeHandler}
                 />
-                <section>
-                    <h2>Working</h2>
-                    <TodoList
-                        todoCard={todoCard}
-                        isDone={false}
-                        isDoneChange={isDoneChange}
-                        clickRemove={clickRemove}
-                    />
-                </section>
-                <section>
-                    <h2>Done</h2>
-                    <TodoList
-                        todoCard={todoCard}
-                        isDone={true}
-                        isDoneChange={isDoneChange}
-                        clickRemove={clickRemove}
-                    />
-                </section>
+
+                <TodoList
+                    sectionTitle={'Working'}
+                    todoCard={todoCard}
+                    isDone={false}
+                    isDoneChange={isDoneChange}
+                    clickRemove={clickRemove}
+                />
+
+                <TodoList
+                    sectionTitle={'Done'}
+                    todoCard={todoCard}
+                    isDone={true}
+                    isDoneChange={isDoneChange}
+                    clickRemove={clickRemove}
+                />
             </main>
         </div>
     );

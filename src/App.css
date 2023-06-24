@@ -1,13 +1,5 @@
 
-.App{
-  max-width: 1200px;
-  min-width: 800px; 
-  width: 100%;
-  /* height: 100vh; */
-  margin: 0 auto;
-  background-color: #efefef;
-padding: 14px 0 0 0;
-}
+/* reset css  */
 p{
   margin: 0;
 }
@@ -22,6 +14,18 @@ main{
 button{
   border: none;
 }
+
+/* App style css  */
+.App{
+  max-width: 1200px;
+  min-width: 800px; 
+  width: 100%;
+  margin: 0 auto;
+  background-color: #efefef;
+  padding: 14px 0 0 0;
+}
+
+/* header style css  */
 .todo-header{
   padding: 12px 0;
   width: 90%;
@@ -35,6 +39,8 @@ button{
   font-size: 20px;
   margin: 0;
 }
+
+/* input box style css */
 .save-todo-box{
   width: 100%;
   /* padding: 12px 18px; */
@@ -51,7 +57,7 @@ button{
   display: flex;
 align-items: center;
 }
-.input-container p{
+.input-container label{
   width: 60px;
   /* background-color: rebeccapurple; */
   text-align: center;
@@ -77,6 +83,8 @@ align-items: center;
   border: 1px solid #777;
 }
 
+
+/* working & done section style css */
 section ul{
   display: flex;
   gap: 17px;
@@ -86,15 +94,16 @@ section ul{
   /* height: 300px; */
 }
 
+/* todolist style css  */
 .todo-card{
   padding: 28px 28px;
   width: calc(30% - 34px);
-  height: 184px;
+  /* min-height: 184px; */
   background-color: azure;
   border: 1px solid #777;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .todo-card .todo-title{
   margin: 0;
