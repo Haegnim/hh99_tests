@@ -38,6 +38,8 @@ function App() {
             isdone: false,
         };
         setTodoCard([...todoCard, newTodo]);
+        setText('');
+        setTitle('');
     };
 
     //button click event

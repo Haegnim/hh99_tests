@@ -4,7 +4,7 @@ import Button from './Button';
 
 function InputBox({ title, text, onSubmitHandler, textChangeHandler, titleChangeHandler }) {
     return (
-        <form className="save-todo-box">
+        <div className="save-todo-box">
             <div className="input-container">
                 <label>제목</label>
                 <input type="text" value={title} onChange={titleChangeHandler} />
@@ -12,7 +12,7 @@ function InputBox({ title, text, onSubmitHandler, textChangeHandler, titleChange
                 <input type="text" value={text} onChange={textChangeHandler} />
             </div>
             <Button buttonFuntion={onSubmitHandler} text={'저장'} />
-        </form>
+        </div>
     );
 }
 
