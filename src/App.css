@@ -52,13 +52,13 @@ button{
   
 }
 .input-container{
-  /* width: 90%; */
+  width: 90%;
   padding: 12px 18px 12px 0;
   display: flex;
 align-items: center;
 }
 .input-container label{
-  width: 60px;
+  width: 50px;
   /* background-color: rebeccapurple; */
   text-align: center;
   padding: 20px 20px;
@@ -70,7 +70,7 @@ align-items: center;
   height: 46px;
   padding-left: 10px;
   background-color: #efefef;
-  width: 320px;
+  width: 40%;
   border-radius: 8px;
   font-size: 20px;
   border: 1px solid #777;
@@ -97,8 +97,9 @@ section ul{
 /* todolist style css  */
 .todo-card{
   padding: 28px 28px;
-  width: calc(30% - 34px);
-  /* min-height: 184px; */
+  /* width: calc(30% - 34px);  */
+  width: 290px;
+
   background-color: azure;
   border: 1px solid #777;
   display: flex;
