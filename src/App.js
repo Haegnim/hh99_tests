@@ -1,25 +1,53 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [content, setContent] = useState([
+        {
+            id: 1,
+            content: 'react를 배워봅시다',
+        },
+    ]);
+    const [inputValue, setinputValue] = useState('');
+    const onChangeHandler = (event) => {
+        setinputValue(event.target.value);
+    };
+    const onSubmitHandler = () => {
+        if (inputValue === '') {
+            alert('내용을 입력해주세요');
+        } else {
+            const newContent = {
+                id: content[content.length - 1].id + 1,
+                content: inputValue,
+            };
+            setContent([...content, newContent]);
+            setinputValue('');
+        }
+    };
+    return (
+        <div className="App">
+            <div className="input-form">
+                <input
+                    type="text"
+                    value={inputValue}
+                    className="input-box"
+                    onChange={onChangeHandler}
+                    placeholder="여기에 제목을 입력해주세요"
+                />
+                <button onClick={onSubmitHandler}>추가하기</button>
+            </div>
+            <h1>TODO LIST</h1>
+            <ul className="todolist">
+                {content.map((item) => {
+                    return (
+                        <li className="todocard" key={item.id}>
+                            {item.content}
+                        </li>
+                    );
+                })}
+            </ul>
+        </div>
+    );
 }
 
 export default App;
