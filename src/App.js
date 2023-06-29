@@ -7,6 +7,14 @@ function App() {
             id: 1,
             content: 'react를 배워봅시다',
         },
+        {
+            id: 1,
+            content: 'react를 배워봅시다',
+        },
+        {
+            id: 1,
+            content: 'react를 배워봅시다',
+        },
     ]);
     const [inputValue, setinputValue] = useState('');
     const onChangeHandler = (event) => {
