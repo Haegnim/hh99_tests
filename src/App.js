@@ -42,7 +42,9 @@ function App() {
                     onChange={onChangeHandler}
                     placeholder="여기에 제목을 입력해주세요"
                 />
-                <button onClick={onSubmitHandler}>추가하기</button>
+                <button className="btn-style" onClick={onSubmitHandler}>
+                    추가하기
+                </button>
             </div>
             <h1>TODO LIST</h1>
             <ul className="todolist">

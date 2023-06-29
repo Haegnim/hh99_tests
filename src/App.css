@@ -6,16 +6,23 @@
   margin: auto;
   text-align: center;
 }
+/* --- input-form style  */
 .input-form{
   width: 400px;
   margin: auto;
   display:flex
 }
 .input-box{
-  width:calc(100% - 60px);
+  width:calc(100% - 100px);
   height: 60px;
   padding: 12px 16px;
 }
+.btn-style{
+  width : 100px;
+  height: 60px;
+
+}
+/* --- todolist style  */
 .todolist{
   padding: 0 30px;
   list-style: none;
@@ -28,10 +35,4 @@
   height: 194px;
   border: 1px solid green;
   border-radius: 25px;
-}
-
-button{
-  width : 60px;
-  height: 60px;
-
 }
