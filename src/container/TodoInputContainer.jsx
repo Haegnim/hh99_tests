@@ -4,12 +4,12 @@ import { addTodo } from '../redux/modules/todos';
 import { useState } from 'react';
 import { InsertForm } from '../features/InsertForm';
 
-function TodoInputContainer() {
+const TodoInputContainer = ({ updateTitle, updateText }) => {
     const dispatch = useDispatch();
 
-    const [title, setTitle] = useState('');
-    const [text, setText] = useState('');
-
+    const [title, setTitle] = useState(updateTitle);
+    const [text, setText] = useState(updateText);
+    console.log(updateTitle);
     const titleChangeHandler = (event) => {
         setTitle(event.target.value);
     };
@@ -29,6 +29,7 @@ function TodoInputContainer() {
     // const isInputEmpty = setTitle === '';
     return (
         <InsertForm
+            flex={'column'}
             onSubmit={onSubmit}
             title={title}
             titleChangeHandler={titleChangeHandler}
@@ -36,6 +37,6 @@ function TodoInputContainer() {
             textChangeHandler={textChangeHandler}
         />
     );
-}
+};
 
 export default TodoInputContainer;

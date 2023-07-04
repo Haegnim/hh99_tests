@@ -2,11 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Input from '../components/Input/Input';
 
+//[ ]props가 없을 때 row 적용안됨
 const InsertFormStyle = styled.form`
     width: 100%;
     /* padding: 12px 18px; */
-    display: flex;
     background-color: azure;
+    display: flex;
+    flex-direction: ${(props) => props.flex || `row`};
     align-items: center;
     justify-content: space-between;
     border: 1px solid #777;
@@ -20,9 +22,16 @@ const InsertFormStyle = styled.form`
     }
 `;
 
-export const InsertForm = ({ onSubmit, titleChangeHandler, title, textChangeHandler, text }) => {
+export const InsertForm = ({
+    onSubmit,
+    titleChangeHandler,
+    title,
+    textChangeHandler,
+    text,
+    flex,
+}) => {
     return (
-        <InsertFormStyle onSubmit={onSubmit}>
+        <InsertFormStyle onSubmit={onSubmit} flex={flex}>
             <Input changeHandler={titleChangeHandler} value={title} label={'제목'} />
             <Input changeHandler={textChangeHandler} value={text} label={'내용'} />
             <button>저장하기</button>
