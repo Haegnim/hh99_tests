@@ -1,0 +1,15 @@
+
+/* reset css  */
+p{
+  margin: 0;
+}
+ul{
+  list-style: none;
+}
+main{
+  width: 90%;
+  margin: 0 auto;
+}
+button{
+  border: none;
+}
