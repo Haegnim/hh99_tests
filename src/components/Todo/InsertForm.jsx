@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Input from '../common/Input/Input';
 import Button from 'components/common/button/Button';
-//[x]props가 없을 때 row 적용안됨
+
 const InsertFormStyle = styled.form`
     width: 100%;
     /* padding: 12px 18px; */

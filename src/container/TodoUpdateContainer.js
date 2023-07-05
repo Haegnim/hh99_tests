@@ -1,23 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { updateTodo } from '../redux/modules/todos';
-import { useState } from 'react';
-import { InsertForm } from '../components/Todo/InsertForm';
+import { updateTodo } from 'redux/modules/todos';
+import { InsertForm } from 'components/Todo/InsertForm';
 import { useNavigate } from 'react-router-dom';
+import useInput from 'hooks/useInput';
 
 const TodoInputContainer = ({ updateTitle, updateText, flex, idNum }) => {
     const dispatch = useDispatch();
     const navigateTo = useNavigate();
 
-    const [title, setTitle] = useState(updateTitle);
-    const [text, setText] = useState(updateText);
-    console.log(updateTitle);
-    const titleChangeHandler = (event) => {
-        setTitle(event.target.value);
-    };
-    const textChangeHandler = (event) => {
-        setText(event.target.value);
-    };
+    const [title, setTitle, titleChangeHandler] = useInput(updateTitle);
+    const [text, setText, textChangeHandler] = useInput(updateText);
 
     const onSubmit = (event) => {
         event.preventDefault();

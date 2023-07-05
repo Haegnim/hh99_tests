@@ -1,22 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/modules/todos';
-import { useState } from 'react';
 import { InsertForm } from '../components/Todo/InsertForm';
+import useInput from 'hooks/useInput';
 
-const TodoInsertContainer = ({ updateTitle, updateText, flex, idNum }) => {
+const TodoInsertContainer = () => {
     const dispatch = useDispatch();
 
-    const [title, setTitle] = useState('');
-    const [text, setText] = useState('');
-    console.log(updateTitle);
-    const titleChangeHandler = (event) => {
-        setTitle(event.target.value);
-    };
-    const textChangeHandler = (event) => {
-        setText(event.target.value);
-    };
-
+    const [title, setTitle, titleChangeHandler] = useInput();
+    const [text, setText, textChangeHandler] = useInput();
     const onSubmit = (event) => {
         event.preventDefault();
         if (text === '' || title === '') {
@@ -30,7 +22,6 @@ const TodoInsertContainer = ({ updateTitle, updateText, flex, idNum }) => {
 
     return (
         <InsertForm
-            flex={flex}
             onSubmit={onSubmit}
             title={title}
             titleChangeHandler={titleChangeHandler}

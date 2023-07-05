@@ -11,8 +11,6 @@ const TodoListStyle = styled.ul`
 `;
 
 const TodoList = ({ sectionTitle, isDone, todos, deleteTodoitem, isdoneChangeTodoitem }) => {
-    let buttonText = '완료';
-    isDone ? (buttonText = '취소') : (buttonText = '완료');
     const filteredTodos = todos.filter((item) => item.isdone === isDone);
     return (
         <section>
@@ -20,7 +18,6 @@ const TodoList = ({ sectionTitle, isDone, todos, deleteTodoitem, isdoneChangeTod
             <TodoListStyle>
                 <TodoItem
                     todos={filteredTodos}
-                    buttonText={buttonText}
                     deleteTodoitem={deleteTodoitem}
                     isdoneChangeTodoitem={isdoneChangeTodoitem}
                 />
