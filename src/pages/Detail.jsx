@@ -62,7 +62,7 @@ export const Detail = () => {
         setUpdateActive(!updateActive);
     };
     console.log(updateActive);
-    //[ ] 수정하기 버튼 클릭이 안됨
+    //[x] 수정하기 버튼 클릭이 된다
     try {
         const todoDetail = todos.filter((item) => item.id === pathname);
         return (
@@ -85,6 +85,8 @@ export const Detail = () => {
                         <TodoInputContainer
                             updateTitle={todoDetail[0].title}
                             updateText={todoDetail[0].text}
+                            flex={'column'}
+                            idNum={todoDetail[0].id}
                         />
                     )}
                 </DetailTodoUpdate>

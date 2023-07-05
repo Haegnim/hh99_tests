@@ -2,6 +2,7 @@
 const ADD_TODO = 'todos/ADD_TODO';
 const DELETE_TODO = 'todos/DELETE_TODO';
 const TOGGLE = 'todos/TOGGLE';
+const UPDATE = 'todos/UPDATE';
 // action creator : action value를 return하는 함수
 let id = 6;
 
@@ -30,6 +31,19 @@ export const isdoneChange = (id, isdone) => {
         isdone,
     };
 };
+
+export const updateTodo = (idNum, title, text) => {
+    return {
+        type: UPDATE,
+        id: idNum,
+        todo: {
+            id: idNum, //여기를 수정고안할 것
+            title,
+            text,
+            isdone: false,
+        },
+    };
+};
 // 초기값
 const initialState = [
     { id: 1, title: `리액트 공부하기`, text: `리액트 기초를 공부해봅시다`, isdone: false },
@@ -55,13 +69,16 @@ const todos = (state = initialState, action) => {
         case DELETE_TODO:
             return state.filter((todo) => todo.id !== action.id);
         case TOGGLE:
-            return state.map((item) => {
-                if (item.id === action.id) {
-                    return { ...item, isdone: !item.isdone };
+            return state.map((todo) => {
+                if (todo.id === action.id) {
+                    return { ...todo, isdone: !todo.isdone };
                 } else {
-                    return item;
+                    return todo;
                 }
             });
+        case UPDATE:
+            state.splice(action.id - 1, 1, action.todo);
+            return [...state];
         default:
             return state;
     }

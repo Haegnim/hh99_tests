@@ -32,8 +32,18 @@ export const InsertForm = ({
 }) => {
     return (
         <InsertFormStyle onSubmit={onSubmit} flex={flex}>
-            <Input changeHandler={titleChangeHandler} value={title} label={'제목'} />
-            <Input changeHandler={textChangeHandler} value={text} label={'내용'} />
+            <Input
+                changeHandler={titleChangeHandler}
+                value={title}
+                label={'제목'}
+                width={flex ? '100%' : ''}
+            />
+            <Input
+                changeHandler={textChangeHandler}
+                value={text}
+                label={'내용'}
+                width={flex ? '100%' : ''}
+            />
             <button>저장하기</button>
         </InsertFormStyle>
     );

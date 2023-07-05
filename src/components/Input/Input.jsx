@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 const InputBoxStyle = styled.div`
-    width: 50%;
+    width: ${(props) => props.width || `50%`};
     padding: 12px 18px 12px 0;
     display: flex;
     align-items: center;
@@ -23,9 +23,9 @@ const InputBoxStyle = styled.div`
         border: 1px solid #777;
     }
 `;
-function Input({ changeHandler, value, label }) {
+function Input({ changeHandler, value, label, width }) {
     return (
-        <InputBoxStyle>
+        <InputBoxStyle width={width}>
             <label>{label}</label>
             <input type="text" value={value} onChange={changeHandler} />
         </InputBoxStyle>
