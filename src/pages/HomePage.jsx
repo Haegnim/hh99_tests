@@ -1,7 +1,6 @@
 // import React, { useState } from 'react';
-import { TodoTemplate } from '../layout/TodoTemplate';
 import { styled } from 'styled-components';
-import TodoInputContainer from '../container/TodoInputContainer';
+import TodoInsertContainer from '../container/TodoInsertContainer';
 import { TodoListContainer } from '../container/TodoListContainer';
 
 const Header = styled.header`
@@ -17,6 +16,14 @@ const Header = styled.header`
     }
 `;
 
+const TodoTemplate = styled.div`
+    max-width: 1200px;
+    min-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #efefef;
+    padding: 14px 0 0 0;
+`;
 export const Home = () => {
     // html
     return (
@@ -25,7 +32,7 @@ export const Home = () => {
                 <h1>My Todo List</h1>
             </Header>
             <main style={{ width: `90%`, margin: `auto` }}>
-                <TodoInputContainer />
+                <TodoInsertContainer />
                 <TodoListContainer sectionTitle={'Working'} isDone={false} />
                 <TodoListContainer sectionTitle={'Done'} isDone={true} />
             </main>

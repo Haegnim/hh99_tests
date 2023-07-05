@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import { Link } from 'react-router-dom';
+import Button from 'components/common/button/Button';
 const TodoListItem = styled.li`
     padding: 28px 28px;
     width: 290px;
@@ -44,19 +45,22 @@ export const TodoItem = ({ todos, buttonText, deleteTodoitem, isdoneChangeTodoit
                 <TodoListItem isDone={item.isdone} key={item.id}>
                     {item.id}
                     <div className="content-box">
-                        <Link to={`/detail/${item.id}`} className="link">
+                        <Link to={`/${item.id}`} className="link">
                             <p className="todo-title">{item.title}</p>
                         </Link>
                         <p className="todo-text">{item.text}</p>
                     </div>
 
                     <div className="todo-card-btn-box">
-                        <button onClick={() => deleteTodoitem(item)} className="remove-btn">
+                        <Button.Remove onClick={() => deleteTodoitem(item)} className="remove-btn">
                             삭제하기
-                        </button>
-                        <button onClick={() => isdoneChangeTodoitem(item)} className="clear-btn">
+                        </Button.Remove>
+                        <Button.Clear
+                            onClick={() => isdoneChangeTodoitem(item)}
+                            className="clear-btn"
+                        >
                             {buttonText}
-                        </button>
+                        </Button.Clear>
                     </div>
                 </TodoListItem>
             ))}

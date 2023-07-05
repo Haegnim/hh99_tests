@@ -1,24 +1,27 @@
 import React from 'react';
-import TodoList from '../components/Todo/TodoList';
-import { useSelector, useDispatch } from 'react-redux';
 import { deleteTodo } from '../redux/modules/todos';
 import { isdoneChange } from '../redux/modules/todos';
-export const TodoListContainer = ({ sectionTitle, isDone }) => {
-    const todos = useSelector(({ todos }) => todos);
+import { useDispatch } from 'react-redux';
+import { TodoItem } from '../components/Todo/TodoItem';
+
+export const TodoDetailItemContainer = ({ todos }) => {
     const dispatch = useDispatch();
+
     const deleteTodoitem = (item) => {
         dispatch(deleteTodo(item.id));
     };
     const isdoneChangeTodoitem = (item) => {
         dispatch(isdoneChange(item.id, item.isdone));
     };
+
+    let buttonText = '완료';
+    todos[0].isdone ? (buttonText = '취소') : (buttonText = '완료');
     return (
-        <TodoList
+        <TodoItem
             todos={todos}
+            buttonText={buttonText}
             deleteTodoitem={deleteTodoitem}
             isdoneChangeTodoitem={isdoneChangeTodoitem}
-            sectionTitle={sectionTitle}
-            isDone={isDone}
         />
     );
 };

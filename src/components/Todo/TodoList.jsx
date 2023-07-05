@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from 'styled-components';
-import { TodoItem } from '../components/Todo/TodoItem';
+import { TodoItem } from './TodoItem';
 
 const TodoListStyle = styled.ul`
     display: flex;

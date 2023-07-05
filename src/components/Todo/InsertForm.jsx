@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Input from '../components/Input/Input';
-
-//[ ]props가 없을 때 row 적용안됨
+import Input from '../common/Input/Input';
+import Button from 'components/common/button/Button';
+//[x]props가 없을 때 row 적용안됨
 const InsertFormStyle = styled.form`
     width: 100%;
     /* padding: 12px 18px; */
@@ -13,12 +13,7 @@ const InsertFormStyle = styled.form`
     justify-content: space-between;
     border: 1px solid #777;
     button {
-        width: 160px;
-        height: 50px;
         margin: 0 20px 0 0;
-        border-radius: 8px;
-        border: 1px solid #777;
-        background-color: green;
     }
 `;
 
@@ -44,7 +39,7 @@ export const InsertForm = ({
                 label={'내용'}
                 width={flex ? '100%' : ''}
             />
-            <button>저장하기</button>
+            <Button.Insert>저장하기</Button.Insert>
         </InsertFormStyle>
     );
 };

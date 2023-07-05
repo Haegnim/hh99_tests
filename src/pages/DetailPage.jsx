@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
-import { deleteTodo } from '../redux/modules/todos';
-import { isdoneChange } from '../redux/modules/todos';
-import { useSelector, useDispatch } from 'react-redux';
-import { TodoItem } from '../components/Todo/TodoItem';
-import TodoInputContainer from '../container/TodoInputContainer';
+import { useSelector } from 'react-redux';
+import TodoUpdateContainer from '../container/TodoUpdateContainer';
+import { TodoDetailItemContainer } from 'container/TodoDetailItemContainer';
 
 const DetailPage = styled.div`
     width: 100%;
@@ -40,31 +38,18 @@ const Button = styled.button`
 export const Detail = () => {
     const todos = useSelector(({ todos }) => todos);
 
-    const dispatch = useDispatch();
-
-    const deleteTodoitem = (item) => {
-        dispatch(deleteTodo(item.id));
-    };
-    const isdoneChangeTodoitem = (item) => {
-        dispatch(isdoneChange(item.id, item.isdone));
-    };
-
     const navigate = useNavigate();
     let { pathname } = useLocation();
-    pathname = parseInt(pathname.replace('/detail/', ''));
-
-    // const update = () => {};
-    let buttonText = '완료';
-    todos.isdone ? (buttonText = '취소') : (buttonText = '완료');
+    pathname = parseInt(pathname.replace('/', ''));
+    const todoDetail = todos.filter((item) => item.id === pathname);
 
     const [updateActive, setUpdateActive] = useState(true);
     const updateBtnHandler = () => {
         setUpdateActive(!updateActive);
     };
-    console.log(updateActive);
+
     //[x] 수정하기 버튼 클릭이 된다
     try {
-        const todoDetail = todos.filter((item) => item.id === pathname);
         return (
             <DetailPage>
                 <DetailTodoUpdate>
@@ -74,15 +59,10 @@ export const Detail = () => {
                     {updateActive ? (
                         <>
                             <Button onClick={updateBtnHandler}>수정하기</Button>
-                            <TodoItem
-                                todos={todoDetail}
-                                buttonText={buttonText}
-                                deleteTodoitem={deleteTodoitem}
-                                isdoneChangeTodoitem={isdoneChangeTodoitem}
-                            />
+                            <TodoDetailItemContainer todos={todoDetail} />
                         </>
                     ) : (
-                        <TodoInputContainer
+                        <TodoUpdateContainer
                             updateTitle={todoDetail[0].title}
                             updateText={todoDetail[0].text}
                             flex={'column'}
