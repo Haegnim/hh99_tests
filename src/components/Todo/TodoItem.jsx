@@ -44,7 +44,7 @@ export const TodoItem = ({ todos, deleteTodoitem, isdoneChangeTodoitem }) => {
     return (
         <>
             {todos.map((item) => (
-                <TodoListItem isDone={item.isdone} key={item.id}>
+                <TodoListItem key={item.id}>
                     {item.id}
                     <div className="content-box">
                         <Link to={`/${item.id}`} className="link">

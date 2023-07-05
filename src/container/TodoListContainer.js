@@ -3,7 +3,7 @@ import TodoList from '../components/Todo/TodoList';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteTodo } from '../redux/modules/todos';
 import { isdoneChange } from '../redux/modules/todos';
-export const TodoListContainer = ({ sectionTitle, isDone }) => {
+export const TodoListContainer = ({ sectionTitle, isdone }) => {
     const todos = useSelector(({ todos }) => todos);
     const dispatch = useDispatch();
     const deleteTodoitem = (item) => {
@@ -18,7 +18,7 @@ export const TodoListContainer = ({ sectionTitle, isDone }) => {
             deleteTodoitem={deleteTodoitem}
             isdoneChangeTodoitem={isdoneChangeTodoitem}
             sectionTitle={sectionTitle}
-            isDone={isDone}
+            isdone={isdone}
         />
     );
 };

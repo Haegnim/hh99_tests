@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-//[ ]버튼 태그 Button 컴포넌트로 수정
+//[x]버튼 태그 Button 컴포넌트로 수정
 const ButtonStyle = styled.button`
     width: 160px;
     height: 50px;
@@ -22,7 +22,7 @@ const ButtonStyle = styled.button`
         }
     }}
     &:active {
-        background-color: ${({ activeBc }) => activeBc};
+        background-color: ${({ activebc }) => activebc};
     }
 `;
 
@@ -31,13 +31,13 @@ const ButtonDefort = ({ children, ...restProps }) => {
 };
 
 const InsertButton = (props) => {
-    return <ButtonDefort {...props} bc="#55efc4" activeBc="#00b894" />;
+    return <ButtonDefort {...props} $bc="#55efc4" $activebc="#00b894" />;
 };
 const RemoveButton = (props) => {
-    return <ButtonDefort {...props} bc="red" activeBc="#ffb894" outlined={true} />;
+    return <ButtonDefort {...props} $bc="red" $activebc="#ffb894" $outlined />;
 };
 const ClearButton = (props) => {
-    return <ButtonDefort {...props} bc="#55efc4" activeBc="#00b894" outlined={true} />;
+    return <ButtonDefort {...props} $bc="#55efc4" $activebc="#00b894" $outlined />;
 };
 
 const Insert = InsertButton;

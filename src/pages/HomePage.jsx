@@ -33,8 +33,8 @@ export const Home = () => {
             </Header>
             <main style={{ width: `90%`, margin: `auto` }}>
                 <TodoInsertContainer />
-                <TodoListContainer sectionTitle={'Working'} isDone={false} />
-                <TodoListContainer sectionTitle={'Done'} isDone={true} />
+                <TodoListContainer sectionTitle={'Working'} isdone={false} />
+                <TodoListContainer sectionTitle={'Done'} isdone={true} />
             </main>
         </TodoTemplate>
     );

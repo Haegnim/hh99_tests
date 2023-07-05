@@ -10,8 +10,8 @@ const TodoListStyle = styled.ul`
     min-height: 42vh;
 `;
 
-const TodoList = ({ sectionTitle, isDone, todos, deleteTodoitem, isdoneChangeTodoitem }) => {
-    const filteredTodos = todos.filter((item) => item.isdone === isDone);
+const TodoList = ({ sectionTitle, isdone, todos, deleteTodoitem, isdoneChangeTodoitem }) => {
+    const filteredTodos = todos.filter((item) => item.isdone === isdone);
     return (
         <section>
             <h2>{sectionTitle}</h2>
