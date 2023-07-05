@@ -17,7 +17,12 @@ const TodoInputContainer = ({ updateTitle, updateText, flex, idNum }) => {
         if (text === '' || title === '') {
             alert('내용을 입력해주세요');
         } else {
-            dispatch(updateTodo(idNum, title, text));
+            const payload = {
+                id: idNum,
+                title,
+                text,
+            };
+            dispatch(updateTodo(payload));
             navigateTo('/');
         }
         setText('');

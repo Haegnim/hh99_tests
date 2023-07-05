@@ -1,49 +1,7 @@
-// action value
-const ADD_TODO = 'todos/ADD_TODO';
-const DELETE_TODO = 'todos/DELETE_TODO';
-const TOGGLE = 'todos/TOGGLE';
-const UPDATE = 'todos/UPDATE';
-// action creator : action value를 return하는 함수
+import { createSlice } from '@reduxjs/toolkit';
+
 let id = 6;
 
-export const addTodo = (title, text) => {
-    return {
-        type: ADD_TODO,
-        todo: {
-            id: id++, //여기를 수정고안할 것
-            title,
-            text,
-            isdone: false,
-        },
-    };
-};
-
-export const deleteTodo = (id) => {
-    return {
-        type: DELETE_TODO,
-        id,
-    };
-};
-export const isdoneChange = (id, isdone) => {
-    return {
-        type: TOGGLE,
-        id,
-        isdone,
-    };
-};
-
-export const updateTodo = (idNum, title, text) => {
-    return {
-        type: UPDATE,
-        id: idNum,
-        todo: {
-            id: idNum, //여기를 수정고안할 것
-            title,
-            text,
-            isdone: false,
-        },
-    };
-};
 // 초기값
 const initialState = [
     { id: 1, title: `리액트 공부하기`, text: `리액트 기초를 공부해봅시다`, isdone: false },
@@ -58,29 +16,49 @@ const initialState = [
     { id: 5, title: `리액트 공부하기4`, text: `리액트 기초를 공부해봅시다`, isdone: false },
 ];
 
-// 리듀서 : 'state에 변화를 일으키는'함수
-// 1. state를 action의 type에 따라 변경하는 함수
-// input : state와 action
-const todos = (state = initialState, action) => {
-    switch (action.type) {
-        //휴먼에러가 날 수 있다.
-        case ADD_TODO:
-            return state.concat(action.todo);
-        case DELETE_TODO:
-            return state.filter((todo) => todo.id !== action.id);
-        case TOGGLE:
+const todosSlice = createSlice({
+    name: 'todos',
+    initialState,
+    reducers: {
+        addTodo: (state, action) => {
+            console.log(action.payload.title);
+            const todo = {
+                id: id++, //여기를 수정고안할 것
+                title: action.payload.title,
+                text: action.payload.text,
+                isdone: false,
+            };
+            return state.concat(todo);
+        },
+        deleteTodo: (state, action) => {
+            return state.filter((todo) => todo.id !== action.payload);
+        },
+        isdoneChange: (state, action) => {
             return state.map((todo) => {
-                if (todo.id === action.id) {
+                if (todo.id === action.payload) {
                     return { ...todo, isdone: !todo.isdone };
                 } else {
                     return todo;
                 }
             });
-        case UPDATE:
-            state.splice(action.id - 1, 1, action.todo);
-            return [...state];
-        default:
-            return state;
-    }
-};
-export default todos;
+        },
+        updateTodo: (state, action) => {
+            const todo = {
+                id: action.payload.id,
+                title: action.payload.title,
+                text: action.payload.text,
+                isdone: false,
+            };
+            //
+            //find 조건에 맞는 첫번째 요소를 반환하거나 조건에 맞는 요소가 없는 경우 undefined 반환
+            //findIndex: 주어진 조건에 맞는 첫번째 요소의 인덱스를 반환하거나, 조건에 맞는 요소가 없는 경우 -1을 반환
+            const todoIndex = state.findIndex((todo) => todo.id === action.payload.id);
+            if (todoIndex !== -1) {
+                state.splice(todoIndex, 1, todo);
+            }
+        },
+    },
+});
+// export default todos;
+export const { addTodo, deleteTodo, isdoneChange, updateTodo } = todosSlice.actions;
+export default todosSlice.reducer;

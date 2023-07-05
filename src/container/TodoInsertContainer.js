@@ -14,7 +14,11 @@ const TodoInsertContainer = () => {
         if (text === '' || title === '') {
             alert('내용을 입력해주세요');
         } else {
-            dispatch(addTodo(title, text));
+            const payload = {
+                title,
+                text,
+            };
+            dispatch(addTodo(payload));
         }
         setText('');
         setTitle('');
