@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import nextId from 'react-id-generator';
 import { addTodo } from '../../../redux/modules/todos.js';
 
-//[x]추가하기 버튼을 클릭해도 추한 아템ㅣ 화면에 표시되지 않음
+//[x]추가하기 버튼을 클릭해도 추한 아이템 화면에 표시되지 않음
 //[x]추가하기 버튼을 클릭후 기존에 존재하던 아이템들이 사라짐
 //[x]삭제 기능이 동작하지 않음.
 //[x]상세 페이지에 진입하였을 때 데이터가 업데이트 되지 않음.
