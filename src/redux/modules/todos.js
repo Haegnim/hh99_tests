@@ -46,12 +46,6 @@ const initialState = {
             body: '리액트를 배워봅시다',
             isDone: false,
         },
-        {
-            id: '0',
-            title: '',
-            body: '',
-            isDone: false,
-        },
     ],
 };
 
