@@ -1,6 +1,6 @@
-### [과제] 숙련주차 과제 답
+# [과제] 숙련주차 과제 답
 
-## [x]추가하기 버튼을 클릭해도 추한 아이템 화면에 표시되지 않음
+### [x]추가하기 버튼을 클릭해도 추한 아이템 화면에 표시되지 않음
 
 Form 컴포넌트에 addTodo 액션을 불러왔으나 useDispatch를 이용해 addTodo을 사용하지 않았습니다.
 그래서 useDispatch를 사용하고 onSubmitHandler 함수의 내용을 다음과 같이 바꿨습니다.
@@ -108,7 +108,7 @@ const Detail = () => {
 
 ### [x] 완료된 카드의 상세 페이지에 진입하였을 때 올바른 데이터를 불러오지 못함.
 
-완료된 카드는 Link to안의 주소 값을 map의 index을 사용하였습니다. Detail 페이지는 params의 값을 읽어 todos의 id들과 대조하여 같은 id의 데이터를 불어오기 때문에 index를 사용하면 todos에 저장된 id와 다를 수 있으므로 데이터가 호출되지 않습니다.
+완료된 카드는 Link to안의 주소 값을 map의 index을 사용하였습니다. Detail 페이지는 params의 값을 읽어 todos의 id들과 대조하여 같은 id의 데이터를 불러오기 때문에 index를 사용하면 todos에 저장된 id와 다를 수 있으므로 데이터가 호출되지 않습니다.
 해당 부분을 index 값이 아닌 todo.id로 수정하였습니다.
 
 ```javascript
@@ -148,7 +148,7 @@ onToggleStatusTodo함수는 문제없이 동작하나 완료된 카드의 취소
 
 해당 부분을 다음과 같이 수정하였습니다.
 
-```javascript
+```jsx
 <StButton borderColor="green" onClick={() => onToggleStatusTodo(todo.id)}>
     {todo.isDone ? '취소!' : '완료!'}
 </StButton>
