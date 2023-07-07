@@ -1,6 +1,10 @@
-# [과제] 숙련주차 과제 답
+# [과제] 숙련주차 과제 제출 답안
 
-### [x]추가하기 버튼을 클릭해도 추한 아이템 화면에 표시되지 않음
+## update
+
+-   2023/7/7 : [4]상세 페이지에 진입하였을 때 데이터가 업데이트 되지 않음 문제의 출제의도에 맞는 풀이로 수정하였습니다.
+
+### [1]추가하기 버튼을 클릭해도 추한 아이템 화면에 표시되지 않음
 
 Form 컴포넌트에 addTodo 액션을 불러왔으나 useDispatch를 이용해 addTodo을 사용하지 않았습니다.
 그래서 useDispatch를 사용하고 onSubmitHandler 함수의 내용을 다음과 같이 바꿨습니다.
@@ -31,7 +35,7 @@ const onSubmitHandler = (event) => {
 
 ---
 
-### [x]추가하기 버튼을 클릭후 기존에 존재하던 아이템들이 사라짐
+### [2]추가하기 버튼을 클릭후 기존에 존재하던 아이템들이 사라짐
 
 todos.js에 리듀서 부분에 문제가 있었습니다. 기존의 ADD_TODO는 todos:[action.payload]만 반환하여 todos의 값이 초기화되고 action.payload만 들어가 기존의 state.todos은 사라지게 됩니다. 해당 부분을 todos: [...state.todos, action.payload]로 수정하여 기존의 state.todos에 action.payload 데이터가 추가되는 기능으로 수정하였습니다.
 
@@ -46,7 +50,7 @@ case ADD_TODO:
 
 ---
 
-### [x]삭제 기능이 동작하지 않음.
+### [3]삭제 기능이 동작하지 않음.
 
 todos.js 리듀서 부분에 DELETE_TODO액션이 존재하지 않습니다. DELETE_TODO액션을 다음과 같이 추가하였습니다.
 
@@ -62,7 +66,7 @@ case DELETE_TODO:
 
 ---
 
-### [x]상세 페이지에 진입하였을 때 데이터가 업데이트 되지 않음.
+### [4]상세 페이지에 진입하였을 때 데이터가 업데이트 되지 않음.
 
 Detail 컴포넌트는 모든 todos를 불러왔는데 todos는 여러 객체가 담긴 배열로 불러와집니다. 하지만 데이터를 불러올때 todo.id 형식으로 몇번째 객체의 데이터를 불러올지 설정하지 않아서 아무 데이터도 호출하지 못합니다.
 useParams로 추출한 id값을 todo의 id값들과 비교하여 같은 id의 데이터만 호출하도록 수정하였습니다.
@@ -70,7 +74,6 @@ useParams로 추출한 id값을 todo의 id값들과 비교하여 같은 id의 �
 ```javascript
 const Detail = () => {
     const dispatch = useDispatch();
-    //state.todos.todo에 오타 state.todos.todos로 수정
     //todos의 모든 객체가 불러와지는데 어떤 객체를 보여줄지 선택하지 않아서 화면에 안나옴
     const todo = useSelector((state) => state.todos.todos);
     const { id } = useParams();
@@ -106,7 +109,7 @@ const Detail = () => {
 
 ---
 
-### [x] 완료된 카드의 상세 페이지에 진입하였을 때 올바른 데이터를 불러오지 못함.
+### [5] 완료된 카드의 상세 페이지에 진입하였을 때 올바른 데이터를 불러오지 못함.
 
 완료된 카드는 Link to안의 주소 값을 map의 index을 사용하였습니다. Detail 페이지는 params의 값을 읽어 todos의 id들과 대조하여 같은 id의 데이터를 불러오기 때문에 index를 사용하면 todos에 저장된 id와 다를 수 있으므로 데이터가 호출되지 않습니다.
 해당 부분을 index 값이 아닌 todo.id로 수정하였습니다.
@@ -142,7 +145,7 @@ todos.map((todo) => {
 
 ---
 
-### [x] 취소 버튼 클릭시 기능이 작동하지 않음.
+### [6] 취소 버튼 클릭시 기능이 작동하지 않음.
 
 onToggleStatusTodo함수는 문제없이 동작하나 완료된 카드의 취소버튼은 onClick={onToggleStatusTodo}으로 해당 함수에 인자를 넣어주지 않았습니다. TOGGLE_STATUS_TODO는 todo의 id값을 필요로 하기 때문에 인자로 todo.id값을 넣어주어야 정상 동작합니다.
 
@@ -156,4 +159,4 @@ onToggleStatusTodo함수는 문제없이 동작하나 완료된 카드의 취소
 
 ---
 
-### [x] 과제를 마쳤다면 배포도 한번 해볼까요? 배포하셨다면 URL을 제출해주세요.
+### [7] 과제를 마쳤다면 배포도 한번 해볼까요? 배포하셨다면 URL을 제출해주세요.

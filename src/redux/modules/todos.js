@@ -47,6 +47,12 @@ const initialState = {
             isDone: false,
         },
     ],
+    todo: {
+        id: '0',
+        title: '',
+        body: '',
+        isDone: false,
+    },
 };
 
 const todos = (state = initialState, action) => {

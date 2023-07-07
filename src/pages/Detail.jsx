@@ -8,20 +8,23 @@ const Detail = () => {
     const dispatch = useDispatch();
     //todo에 오타 todos로 수정
     //todos의 모든 객체가 불러와지는데 어떤 객체를 보여줄지 선택하지 않아서 화면에 안나옴
-    const todo = useSelector((state) => state.todos.todos);
+    const todo = useSelector((state) => state.todos.todo);
     const { id } = useParams();
     const navigate = useNavigate();
     //id는 주소창으로 보내진 todos의  id를 가져온 값이다.
     //todos 중에서 id와 같은 id를 가진 todo를 find로 찾아 todoDetail로 반환한다.
-    const todoDetail = todo.find((todoDetail) => todoDetail.id === id);
-    console.log(todoDetail);
+    // const todoDetail = todo.find((todoDetail) => todoDetail.id === id);
+    // console.log(todoDetail);
+    useEffect(() => {
+        dispatch(getTodoByID(id));
+    }, [dispatch, id]);
 
     return (
         <StContainer>
             <StDialog>
                 <div>
                     <StDialogHeader>
-                        <div>ID :{todoDetail.id}</div>
+                        <div>ID :{todo.id}</div>
                         <StButton
                             borderColor="#ddd"
                             onClick={() => {
@@ -31,8 +34,8 @@ const Detail = () => {
                             이전으로
                         </StButton>
                     </StDialogHeader>
-                    <StTitle>{todoDetail.title}</StTitle>
-                    <StBody>{todoDetail.body}</StBody>
+                    <StTitle>{todo.title}</StTitle>
+                    <StBody>{todo.body}</StBody>
                 </div>
             </StDialog>
         </StContainer>
