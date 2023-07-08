@@ -21,7 +21,7 @@ export const TodoDetailItemContainer = () => {
     };
 
     pathname = parseInt(pathname.replace('/', ''));
-    const todoDetail = todos.filter((item) => item.id === pathname);
+    const todoDetail = todos.find((item) => item.id === pathname);
 
     const [updateActive, setUpdateActive] = useState(true);
     const updateBtnHandler = () => {

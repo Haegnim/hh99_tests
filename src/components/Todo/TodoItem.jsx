@@ -40,7 +40,7 @@ const TodoListItem = styled.li`
 
 export const TodoItem = ({ todos, deleteTodoitem, isdoneChangeTodoitem }) => {
     let buttonText = '완료';
-    todos[0].isdone ? (buttonText = '취소') : (buttonText = '완료');
+    todos.isdone ? (buttonText = '취소') : (buttonText = '완료');
     return (
         <>
             {todos.map((item) => (
