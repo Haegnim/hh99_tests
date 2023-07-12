@@ -29,7 +29,7 @@ const AddCardContainer = () => {
         e.preventDefault();
         const newCard = {
             id: uuidv4(),
-            writer,
+            author: writer,
             title,
             content,
         };

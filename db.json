@@ -6,22 +6,71 @@
       "author": "typicode"
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "id": "06f3ef27-bd75-472a-a728-d9a71a2b4c8f",
+      "author": "댓글",
+      "body": "댓글됨",
+      "postId": "66082b29-c1d2-4076-bbf4-975cff54d331"
+    },
+    {
+      "id": "bc4cc265-e500-477c-b077-f9c8647a4afa",
+      "author": "댓글댓글",
+      "body": "댓글이야",
+      "postId": "66082b29-c1d2-4076-bbf4-975cff54d331"
+    },
+    {
+      "id": "be3d639d-9289-4097-835d-3e923e7a5e24",
+      "author": "아라하하하",
+      "body": "댓글이라구~\n",
+      "postId": "66082b29-c1d2-4076-bbf4-975cff54d331"
+    }
+  ],
   "profile": {
     "name": "typicode"
   },
   "cards": [
     {
-      "id": "6",
-      "writer": "asdf",
-      "title": "asdfee",
-      "content": "sdfsxc"
+      "id": "66082b29-c1d2-4076-bbf4-975cff54d331",
+      "author": "작성자",
+      "title": "이거 체크 해야하네",
+      "content": "길이까지 생각 안했는데"
     },
     {
-      "id": "e4d75785-2a46-4c86-bc2d-7224be4252f1",
-      "writer": "너의 잘못이야아ㅏ",
-      "title": "맞쥐맞쥐",
-      "content": "아마도 맞쥐~"
+      "id": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c",
+      "author": "작성자",
+      "title": "제목",
+      "content": "괜찮았으어"
+    },
+    {
+      "id": "dd074751-4f88-4b6f-b196-11e4bb45c5f0",
+      "author": "작성자",
+      "title": "제목",
+      "content": "컨텐츠"
+    },
+    {
+      "id": "08eb0c73-4140-4aa8-9e1d-1c7fe652d396",
+      "author": "글쓰는걸",
+      "title": "보여줬나",
+      "content": "아니 아닐걸"
+    },
+    {
+      "id": "aa560d2e-a0d3-4204-b86c-fea8374fbd67",
+      "author": "ㅇㅇ",
+      "title": "ㅇㅇ",
+      "content": "ㅇㅇ"
+    },
+    {
+      "id": "69453a4b-d38a-4224-92d5-3bf4f294f401",
+      "author": "ㅁㄴㅇㄹ",
+      "title": "ㅁㄴㅇㄹ",
+      "content": "ㅁㅇㄴㄹ"
+    },
+    {
+      "id": "d59569c7-4a04-4c0c-81e3-ae71084a8f80",
+      "author": "이건",
+      "title": "고려를",
+      "content": "못했는걸?"
     }
   ]
 }
