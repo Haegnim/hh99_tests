@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  },
+  "cards": [
+    {
+      "id": "6",
+      "writer": "asdf",
+      "title": "asdfee",
+      "content": "sdfsxc"
+    },
+    {
+      "id": "e4d75785-2a46-4c86-bc2d-7224be4252f1",
+      "writer": "너의 잘못이야아ㅏ",
+      "title": "맞쥐맞쥐",
+      "content": "아마도 맞쥐~"
+    }
+  ]
+}
