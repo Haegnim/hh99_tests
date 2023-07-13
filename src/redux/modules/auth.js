@@ -1,13 +1,8 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     isAuth: false,
 };
-
-export const __isAuthCheck = createAsyncThunk('__isAuthCheck', async (payload, thunkAPI) => {
-    thunkAPI.dispatch(authSlice.actions.isAuthCheck(payload));
-});
 
 export const authSlice = createSlice({
     name: 'auth',

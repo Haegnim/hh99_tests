@@ -10,8 +10,8 @@ const BtnSt = styled.button`
             return css`
                 position: fixed;
                 right: 50%;
-                bottom: 100px;
-                transform: translateX(50%);
+                bottom: 50%;
+                transform: translate(50%, 600%);
                 z-index: 1;
             `;
         }

@@ -22,7 +22,7 @@ const CommentContainer = () => {
     }, [dispatch, id]);
 
     if (isLoading) {
-        return <Loading />;
+        // return <Loading />;
     }
     if (error) {
         return <div>{error.message}</div>;

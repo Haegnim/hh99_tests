@@ -31,9 +31,9 @@ const CardsContainer = () => {
             clearTimeout(timer);
         };
     }, []);
-    console.log(card);
+
     if (isLoading || showLoading) {
-        return <Loading />;
+        // return <Loading />;
     }
     if (error) {
         return <div>{error.message}</div>;

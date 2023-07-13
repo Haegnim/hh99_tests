@@ -5,7 +5,7 @@ const Mobile = styled.div`
     height: 844px;
     background-color: #fff;
     overflow: scroll;
-    position: relative;
+    /* position: relative; */
 `;
 const Display = ({ children }) => {
     return <Mobile>{children}</Mobile>;

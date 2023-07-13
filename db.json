@@ -6,7 +6,56 @@
       "author": "typicode"
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "id": "45d2e875-a60a-4409-907b-d9d7765d714d",
+      "author": "asdf",
+      "body": "adsf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "6b553340-d54a-4f0c-b878-caf98fe2d039",
+      "author": "asdf",
+      "body": "asdf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "942333ca-55e7-4c1d-b691-fa1fe6e3d957",
+      "author": "asdf",
+      "body": "asdf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "129a9f12-f85a-491e-af47-5923718a5db4",
+      "author": "asdf",
+      "body": "adsf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "9ed02919-452c-45ab-8887-fbf81e779745",
+      "author": "asdf",
+      "body": "adf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "e31271a4-faa3-4688-8917-0993424a9319",
+      "author": "asdf",
+      "body": "adsf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "c3791878-1396-4233-8ee5-ef0c0d3098a4",
+      "author": "asdf",
+      "body": "adf",
+      "postId": "69453a4b-d38a-4224-92d5-3bf4f294f401"
+    },
+    {
+      "id": "a39e762d-4f66-4c1e-bd03-5d28c60425c6",
+      "author": "sdf",
+      "body": "asdf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    }
+  ],
   "profile": {
     "name": "typicode"
   },
@@ -46,6 +95,12 @@
       "author": "이건",
       "title": "고려를",
       "content": "못했는걸?"
+    },
+    {
+      "id": "3f57bd41-9373-4069-90ba-cd473c1ba5c4",
+      "author": "asdf",
+      "title": "adsf",
+      "content": "adf"
     }
   ]
 }

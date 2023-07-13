@@ -30,7 +30,7 @@ const CardsContainer = () => {
     }, []);
 
     if (isLoading || showLoading) {
-        return <Loading />;
+        // return <Loading />;
     }
     if (error) {
         return <div>{error.message}</div>;
