@@ -26,7 +26,7 @@ export const __updateCard = createAsyncThunk('UPDATE_CARD', async (payload, thun
     }
 });
 
-export const todoSlice = createSlice({
+export const cardSlice = createSlice({
     name: 'card',
     initialState,
     reducers: {},
@@ -62,5 +62,5 @@ export const todoSlice = createSlice({
     },
 });
 
-export const {} = todoSlice.actions;
-export default todoSlice.reducer;
+export const {} = cardSlice.actions;
+export default cardSlice.reducer;

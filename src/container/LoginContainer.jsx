@@ -3,7 +3,12 @@ import styled from 'styled-components';
 import Input from '../components/Input';
 import useInput from '../hooks/useInput';
 import Button from '../components/Button';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { isAuthCheck } from '../redux/modules/auth';
+import { authCheck } from '../api/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import { login } from '../api/auth';
+
 const FormSt = styled.form`
     width: 80%;
     height: 300px;
@@ -19,16 +24,18 @@ const FormSt = styled.form`
 const JoinContainer = () => {
     const [userId, setUserId, onChangeUserIdHandler] = useInput();
     const [password, setPassword, onChangePasswordHandler] = useInput();
-
-    const onSubmitHandler = (e) => {
+    const dispatch = useDispatch();
+    const onSubmitHandler = async (e) => {
         e.preventDefault();
-        const newUser = {
+        const loginUser = {
             id: userId,
             password,
         };
-        console.log(newUser);
+        await login(loginUser);
         setUserId('');
         setPassword('');
+        const authResult = await authCheck();
+        dispatch(isAuthCheck(authResult));
     };
 
     return (
@@ -55,9 +62,9 @@ const JoinContainer = () => {
                     }}
                 >
                     <Link to="/join">
-                        <Button>회원가입</Button>
+                        <Button>회원가입 이동</Button>
                     </Link>
-                    <Button>추가하기</Button>
+                    <Button>로그인</Button>
                 </div>
             </FormSt>
         </>

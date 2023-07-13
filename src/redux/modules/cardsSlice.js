@@ -35,7 +35,7 @@ export const __deleteCard = createAsyncThunk('DELETE_CARD', async (payload, thun
     }
 });
 
-export const todoSlice = createSlice({
+export const cardsSlice = createSlice({
     name: 'cards',
     initialState,
     reducers: {},
@@ -75,5 +75,5 @@ export const todoSlice = createSlice({
     },
 });
 
-export const {} = todoSlice.actions;
-export default todoSlice.reducer;
+export const {} = cardsSlice.actions;
+export default cardsSlice.reducer;

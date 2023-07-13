@@ -3,11 +3,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import card from '../modules/cardSlice';
 import cards from '../modules/cardsSlice';
 import comments from '../modules/commentSlice';
+import auth from '../modules/auth';
 const store = configureStore({
     reducer: {
         cards,
         card,
         comments,
+        auth,
     },
 });
 

@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import Input from '../components/Input';
 import useInput from '../hooks/useInput';
 import Button from '../components/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { signUp } from '../api/auth';
 const FormSt = styled.form`
     width: 90%;
     height: 300px;
@@ -19,14 +20,15 @@ const FormSt = styled.form`
 const JoinContainer = () => {
     const [userId, setUserId, onChangeUserIdHandler] = useInput();
     const [password, setPassword, onChangePasswordHandler] = useInput();
-
-    const onSubmitHandler = (e) => {
+    const navigate = useNavigate();
+    const onSubmitHandler = async (e) => {
         e.preventDefault();
         const newUser = {
             id: userId,
             password,
         };
         console.log(newUser);
+        await signUp(newUser);
         setUserId('');
         setPassword('');
     };
@@ -55,9 +57,9 @@ const JoinContainer = () => {
                     }}
                 >
                     <Link to="/login">
-                        <Button>로그인하기</Button>
+                        <Button>로그인 이동</Button>
                     </Link>
-                    <Button>추가하기</Button>
+                    <Button>회원가입하기</Button>
                 </div>
             </FormSt>
         </>

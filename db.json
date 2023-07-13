@@ -6,40 +6,15 @@
       "author": "typicode"
     }
   ],
-  "comments": [
-    {
-      "id": "06f3ef27-bd75-472a-a728-d9a71a2b4c8f",
-      "author": "댓글",
-      "body": "댓글됨",
-      "postId": "66082b29-c1d2-4076-bbf4-975cff54d331"
-    },
-    {
-      "id": "bc4cc265-e500-477c-b077-f9c8647a4afa",
-      "author": "댓글댓글",
-      "body": "댓글이야",
-      "postId": "66082b29-c1d2-4076-bbf4-975cff54d331"
-    },
-    {
-      "id": "be3d639d-9289-4097-835d-3e923e7a5e24",
-      "author": "아라하하하",
-      "body": "댓글이라구~\n",
-      "postId": "66082b29-c1d2-4076-bbf4-975cff54d331"
-    }
-  ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   },
   "cards": [
     {
-      "id": "66082b29-c1d2-4076-bbf4-975cff54d331",
-      "author": "작성자",
-      "title": "이거 체크 해야하네",
-      "content": "길이까지 생각 안했는데"
-    },
-    {
       "id": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c",
       "author": "작성자",
-      "title": "제목",
+      "title": "제목 제목제목제목",
       "content": "괜찮았으어"
     },
     {

@@ -1,6 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import styled from 'styled-components';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 import { useDispatch } from 'react-redux';
 import { __deleteCard } from '../redux/modules/cardsSlice';
@@ -42,7 +42,6 @@ const CardItem = ({ id, title, author, content, btnhidden }) => {
         dispatch(__deleteCard(id));
         navigate(-1);
     };
-    console.log(id);
     return (
         <CardItemSt key={id}>
             <h2 className="title" onClick={() => navigate(`/card/${id}`)}>
