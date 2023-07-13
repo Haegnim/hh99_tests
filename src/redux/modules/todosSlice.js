@@ -8,7 +8,7 @@ import { waitTwoSeconds } from '../../utils';
 export const __addToDo = createAsyncThunk('__addToDo', async (payload, thunkAPI) => {
     try {
         await waitTwoSeconds();
-        axios.post('http://localhost:3001/todos', payload);
+        // axios.post('http://localhost:3001/todos', payload);
         thunkAPI.dispatch(addTodo(payload));
     } catch (error) {
         return alert('추가에 실패하였습니다.');
@@ -18,7 +18,7 @@ export const __addToDo = createAsyncThunk('__addToDo', async (payload, thunkAPI)
 export const __deleteTodo = createAsyncThunk('__deleteToDo', async (payload, thunkAPI) => {
     try {
         await waitTwoSeconds();
-        axios.delete(`http://localhost:3001/todos/${payload}`);
+        // axios.delete(`http://localhost:3001/todos/${payload}`);
         thunkAPI.dispatch(deleteTodo(payload));
     } catch (error) {
         return alert('삭제 실패하였습니다.');
