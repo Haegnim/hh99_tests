@@ -1,0 +1,106 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": "45d2e875-a60a-4409-907b-d9d7765d714d",
+      "author": "asdf",
+      "body": "adsf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "6b553340-d54a-4f0c-b878-caf98fe2d039",
+      "author": "asdf",
+      "body": "asdf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "942333ca-55e7-4c1d-b691-fa1fe6e3d957",
+      "author": "asdf",
+      "body": "asdf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "129a9f12-f85a-491e-af47-5923718a5db4",
+      "author": "asdf",
+      "body": "adsf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "9ed02919-452c-45ab-8887-fbf81e779745",
+      "author": "asdf",
+      "body": "adf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "e31271a4-faa3-4688-8917-0993424a9319",
+      "author": "asdf",
+      "body": "adsf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    },
+    {
+      "id": "c3791878-1396-4233-8ee5-ef0c0d3098a4",
+      "author": "asdf",
+      "body": "adf",
+      "postId": "69453a4b-d38a-4224-92d5-3bf4f294f401"
+    },
+    {
+      "id": "a39e762d-4f66-4c1e-bd03-5d28c60425c6",
+      "author": "sdf",
+      "body": "asdf",
+      "postId": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "cards": [
+    {
+      "id": "a504e7f5-84c1-4f7b-8d18-3e90b0e1132c",
+      "author": "작성자",
+      "title": "제목 제목제목제목",
+      "content": "괜찮았으어"
+    },
+    {
+      "id": "dd074751-4f88-4b6f-b196-11e4bb45c5f0",
+      "author": "작성자",
+      "title": "제목",
+      "content": "컨텐츠"
+    },
+    {
+      "id": "08eb0c73-4140-4aa8-9e1d-1c7fe652d396",
+      "author": "글쓰는걸",
+      "title": "보여줬나",
+      "content": "아니 아닐걸"
+    },
+    {
+      "id": "aa560d2e-a0d3-4204-b86c-fea8374fbd67",
+      "author": "ㅇㅇ",
+      "title": "ㅇㅇ",
+      "content": "ㅇㅇ"
+    },
+    {
+      "id": "69453a4b-d38a-4224-92d5-3bf4f294f401",
+      "author": "ㅁㄴㅇㄹ",
+      "title": "ㅁㄴㅇㄹ",
+      "content": "ㅁㅇㄴㄹ"
+    },
+    {
+      "id": "d59569c7-4a04-4c0c-81e3-ae71084a8f80",
+      "author": "이건",
+      "title": "고려를",
+      "content": "못했는걸?"
+    },
+    {
+      "id": "3f57bd41-9373-4069-90ba-cd473c1ba5c4",
+      "author": "asdf",
+      "title": "adsf",
+      "content": "adf"
+    }
+  ]
+}
