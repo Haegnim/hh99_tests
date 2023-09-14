@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "react1",
+      "text": "리액트 기초를 공부해봅시다",
+      "isdone": false
+    },
+    {
+      "id": 2,
+      "title": "react1",
+      "text": "리액트 기초를 공부해봅시다",
+      "isdone": true
+    },
+    {
+      "id": "1d4867af-1358-44b2-99c3-2a144c983043",
+      "title": "sdf",
+      "text": "sdf",
+      "isdone": false
+    },
+    {
+      "id": "938915c0-3c18-4a63-adac-ac14782572dc",
+      "title": "ㅇ",
+      "text": "ㅇ",
+      "isdone": false
+    },
+    {
+      "id": "3f748a63-563c-4924-9068-e79acec6d3ed",
+      "title": "ㅇ",
+      "text": "ㅇ",
+      "isdone": false
+    }
+  ]
+}
